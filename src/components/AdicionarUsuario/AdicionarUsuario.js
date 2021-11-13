@@ -21,13 +21,15 @@ const AdicionarUsuario = () => {
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify(usuario),
             })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setName("");
-                setLastName("");
-                setEmail("");
-                // props.adicionarUsuario(data)
+            // .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) {
+                    setName("");
+                    setLastName("");
+                    setEmail("");
+                    alert("Usuário adicionado com sucesso!");
+                    // props.adicionarUsuario(data)
+                }
             });
     };
 

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import "./App.css";
+import UsersDetail from "./components/UsersDetail";
 
 import Usuarios from "./components/Usuarios/Usuarios";
 import AdicionarUsuario from "./components/AdicionarUsuario/AdicionarUsuario";
@@ -33,10 +34,11 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={Home()} />
-            <Route path="/users" element={Usuarios()} />
-            <Route path="/add" element={AdicionarUsuario()} />
-            <Route path="*" element={PageNotFound()} />
+            <Route path="/" element={<Home />} />
+            <Route path="/users/:id" element={<UsersDetail />} />
+            <Route path="/users" element={<Usuarios />} />
+            <Route path="/add" element={<AdicionarUsuario />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
       </div>

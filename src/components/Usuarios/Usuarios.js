@@ -25,12 +25,6 @@ const Usuarios = (props) => {
       });
   }, []);
 
-  console.log("render");
-
-  const adicionarUsuario = (user) => {
-    setList([...list, user]);
-  };
-
   const removerUsuario = (usuario) => {
     if (
       window.confirm(
